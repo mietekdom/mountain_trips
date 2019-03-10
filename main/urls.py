@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import wszystkie_zdjecia, nowe_zdjecie
+from .views import all_trips, new_trip, edit_trip, delete_trip
 
 urlpatterns = [
-    path('zdjecia/', wszystkie_zdjecia, name='wszystkie_zdjecia'),
-    path('nowy/', nowe_zdjecie, name='nowe_zdjecie'),
+    path('trips/', all_trips, name='wszystkie_wyjazdy'),
+    path('new/', new_trip, name='nowy_wyjazd'),
+    path('edit/<int:id>/', edit_trip, name='edytuj_wyjazd'),
+    path('delete/<int:id>/', delete_trip, name='usun_wyjazd'),
 ]

@@ -4,17 +4,39 @@ from django.contrib.auth.decorators import login_required
 from .forms import PictureForm
 
 
-def wszystkie_zdjecia(request):
-    zdjecia = Picture.objects.all()
-    return render(request, 'trip_list.html', {'zdjecia': zdjecia})
+def all_trips(request):
+    trip = Picture.objects.all()
+    return render(request, 'trip_list.html', {'trip': trip})
 
 
 @login_required
-def nowe_zdjecie(request):
+def new_trip(request):
     form = PictureForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()
-        return redirect(wszystkie_zdjecia)
+        return redirect(all_trips)
 
-    return render(request, 'picture_form.html', {'form': form})
+    return render(request, 'trips_form.html', {'form': form})
+
+
+@login_required
+def edit_trip(request, id):
+    trip = get_object_or_404(Picture, pk=id)
+    form = PictureForm(request.POST or None, request.FILES or None, instance=trip)
+
+    if form.is_valid():
+        form.save()
+        return redirect(all_trips)
+
+    return render(request, 'trips_form.html', {'form': form})
+
+
+@login_required
+def delete_trip(request, id):
+    trip = get_object_or_404(Picture, pk=id)
+
+    if request.method == 'POST':
+        trip.delete()
+        return redirect(all_trips)
+    return render(request, 'delete_trip.html', {'trip': trip})
