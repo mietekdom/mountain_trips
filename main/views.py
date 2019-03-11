@@ -5,8 +5,8 @@ from .forms import PictureForm
 
 
 def all_trips(request):
-    trip = Picture.objects.all()
-    return render(request, 'trip_list.html', {'trip': trip})
+    trips = Picture.objects.all()
+    return render(request, 'trip_list.html', {'trips': trips})
 
 
 @login_required

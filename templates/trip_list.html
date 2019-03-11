@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="{% static 'moje.css' %}">
 </head>
 <body>
-    <p1>tu bedzi elista filmów</p1>
+            Hello {{user.username}}<br>
+            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+            <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+
+
+
+ <p>Wyjazdy:</p>
+    <a href="{% url 'nowy_wyjazd' %}">Dodaj</a>
+    {% for trip in trips %}
+
+    <div>
+        <h2> {{trip}} </h2>
+        <p> {{film.description}} </p>
+        <a href="{% url 'edytuj_wyjazd' trip.id %}">Edytuj</a>
+        <a href="{% url 'usun_wyjazd' trip.id %}">Usun</a>
+    </div>
+
+    {% endfor %}
 </body>
 </html>
