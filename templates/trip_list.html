@@ -1,24 +1,35 @@
-{% extends 'main.html' %}
+    {% extends 'main.html' %}
 
-{% block title %} Wyprawy {% endblock %}
+    {% block title %} Wyprawy {% endblock %}
 
-{% block body %}
-            Hello {{user.username}}<br>
-            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
-            <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+    {% block body %}
 
+    <style>
+    </style>
 
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="lead">Zdjęcia z moich wypraw w polskie góry</h1>
+            <p class="display-5">{% if user.is_authenticated %}
+              Hello {{user.username}}<br></p>
 
- <p>Wyjazdy:</p>
-    <a href="{% url 'nowy_wyjazd' %}">Dodaj</a>
-    {% for trip in trips %}
-
-    <div>
-        <h2> {{trip}} </h2>
-        <p> {{film.description}} </p>
-        <a href="{% url 'edytuj_wyjazd' trip.id %}">Edytuj</a>
-        <a href="{% url 'usun_wyjazd' trip.id %}">Usun</a>
+                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
     </div>
 
+     <p>Wyjazdy:</p>
+        <a href="{% url 'nowy_wyjazd' %}">Dodaj</a>
+    {% for trip in trips %}
+        <div class="card" style="width: 600px;">
+            <div class="card-body">
+                <h1> {{trip}} </h1>
+                <p> {{trip.description}} </p>
+                <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
+                <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>
+            </div>
+        </div>
     {% endfor %}
-{% endblock %}
+    {% endblock %}

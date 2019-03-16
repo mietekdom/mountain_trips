@@ -125,3 +125,9 @@ STATICFILES_DIRS = ['moje_static']
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'moje_media'
+
+LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'wszystkie_wyjazdy'
+
+LOGOUT_REDIRECT_URL = 'login'
