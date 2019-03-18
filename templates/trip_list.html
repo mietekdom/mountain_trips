@@ -7,8 +7,8 @@
     <style>
     </style>
 
-    <div class="container">
-        <div class="jumbotron">
+    <div class="jumbotron">
+        <div class="container">
             <h1 class="lead">Zdjęcia z moich wypraw w polskie góry</h1>
             <p class="display-5">{% if user.is_authenticated %}
               Hello {{user.username}}<br></p>
@@ -21,11 +21,13 @@
     </div>
 
      <p>Wyjazdy:</p>
-        <a href="{% url 'nowy_wyjazd' %}">Dodaj</a>
+        <a href="{% url 'nowy_wyjazd' %}">Dodaj wyjazd</a>
+
     {% for trip in trips %}
-        <div class="card" style="width: 600px;">
+        <div class="card">
+                <img src="/media/{{trip.photo}}">
             <div class="card-body">
-                <h1> {{trip}} </h1>
+                <h2> {{trip}} </h2>
                 <p> {{trip.description}} </p>
                 <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
                 <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>

@@ -3,12 +3,17 @@ body {
     padding: 50px;
 }
 img {
-    width: 150px;
-    float: left;
+    width: 300px;
 }
 .card {
-    width: 700px
+    width: 800px
 }
-.desc {
-    margin-left: 15px;
+.jumbotron{
+    background-image: url("/media/wyprawy.jpeg");
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: SaddleBrown;
 }
