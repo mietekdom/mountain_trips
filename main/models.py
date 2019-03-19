@@ -5,6 +5,7 @@ class Picture(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField(default='')
     year = models.IntegerField(null=True, blank=True)
+    mountains = models.CharField(max_length=126, null=True, blank=True)
     photo = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
 
     def __str__(self):

@@ -21,9 +21,11 @@
     </div>
 
      <p>Wyjazdy:</p>
-        <a href="{% url 'nowy_wyjazd' %}">Dodaj wyjazd</a>
+        <a href="{% url 'nowy_wyjazd' %}"><button type="button" class="btn btn-secondary">Dodaj wyjazd</button></a>
+    <br>
+    <br>
 
-    {% for trip in trips %}
+    {% for trip in trips reversed %}
         <div class="card">
                 <img src="/media/{{trip.photo}}">
             <div class="card-body">
@@ -32,6 +34,8 @@
                 <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
                 <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>
             </div>
+
         </div>
+    <br>
     {% endfor %}
     {% endblock %}
