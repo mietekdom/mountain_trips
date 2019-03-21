@@ -3,11 +3,12 @@
 {% block title %} Usuwanie {% endblock %}
 
 {% block body %}
-    <h1>Czy napewno chcesz usunac {{trip.name}}</h1>
-    <form  method="post">
+    <div class="alert alert-danger" role="alert">
+      Czy napewno chcesz usunac {{trip.name}} ?
+    </div>
+    <form method="post">
         {% csrf_token %}
-        <button type="submit">Tak</button>
-
+        <a href="{% url 'wszystkie_wyjazdy' %}"><button type="button" class="btn btn-success">Nie</button></a>
+        <button type="submit" class="btn btn-danger">Tak</button>
     </form>
-
 {% endblock %}

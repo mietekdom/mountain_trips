@@ -6,7 +6,10 @@ class Picture(models.Model):
     description = models.TextField(default='')
     year = models.IntegerField(null=True, blank=True)
     mountains = models.CharField(max_length=126, null=True, blank=True)
-    photo = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo1 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo2 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo3 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo4 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
 
     def __str__(self):
         return self.name_with_year()
