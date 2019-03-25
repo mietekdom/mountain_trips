@@ -4,10 +4,11 @@ body {
 }
 img {
     width: 500px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 }
 .card {
     width: cover;
-    padding: 50px;
+    padding: 40px;
 }
 .jumbotron{
     background-image: url("/media/wyprawy.jpeg");

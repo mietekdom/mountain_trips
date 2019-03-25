@@ -28,15 +28,49 @@
         <div class="card">
             <h2> {{trip}} </h2>
             <p> {{trip.description}} </p>
+
+           <div id="mdb-lightbox-ui"></div>
+
+           <div class="mdb-lightbox no-margin">
+
             <div class="container">
-              <div class="row">
-                <div class="col"><img src="/media/{{trip.photo1}}"></div>
-                <div class="col"><img src="/media/{{trip.photo2}}"></div>
-                <div class="w-100"></div>
-                <div class="col"><img src="/media/{{trip.photo3}}"></div>
-                <div class="col"><img src="/media/{{trip.photo4}}"></div>
-              </div>
+                <div class="row">
+                  <figure class="col">
+                    <a class="black-text" href="/media/{{trip.photo1}}"
+                      data-size="1600x1067">
+                      <img alt="picture" src="/media/{{trip.photo1}}"
+                        class="img-fluid" />
+                    </a>
+                  </figure>
+
+                  <figure class="col">
+                    <a class="black-text" href="/media/{{trip.photo2}}"
+                      data-size="1600x1067">
+                      <img alt="picture" src="/media/{{trip.photo2}}"
+                        class="img-fluid" />
+                    </a>
+                  </figure>
+                </div>
+
+                <div class="row">
+                  <figure class="col">
+                    <a class="black-text" href="/media/{{trip.photo3}}"
+                      data-size="1600x1067">
+                      <img alt="picture" src="/media/{{trip.photo3}}"
+                        class="img-fluid" />
+                    </a>
+                  </figure>
+
+                  <figure class="col">
+                    <a class="black-text" href="/media/{{trip.photo4}}"
+                      data-size="1600x1067">
+                      <img alt="picture" src="/media/{{trip.photo4}}"
+                        class="img-fluid" />
+                    </a>
+                  </figure>
+                </div>
             </div>
+
             <div class="card-body">
                 <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
                 <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>
