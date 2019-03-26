@@ -9,7 +9,7 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1 class="lead">Zdjęcia z moich wypraw w polskie góry</h1>
+            <h2 class="display-5">Zdjęcia z moich wypraw w polskie góry</h2>
             <p class="display-5">{% if user.is_authenticated %}
               Hello {{user.username}}<br></p>
 
@@ -29,47 +29,53 @@
             <h2> {{trip}} </h2>
             <p> {{trip.description}} </p>
 
-           <div id="mdb-lightbox-ui"></div>
-
-           <div class="mdb-lightbox no-margin">
-
-            <div class="container">
+    <div class="gallery">
                 <div class="row">
                   <figure class="col">
-                    <a class="black-text" href="/media/{{trip.photo1}}"
-                      data-size="1600x1067">
-                      <img alt="picture" src="/media/{{trip.photo1}}"
-                        class="img-fluid" />
+                    <a href="/media/{{trip.photo1}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo1}}"/>
                     </a>
                   </figure>
 
                   <figure class="col">
-                    <a class="black-text" href="/media/{{trip.photo2}}"
-                      data-size="1600x1067">
-                      <img alt="picture" src="/media/{{trip.photo2}}"
-                        class="img-fluid" />
+                    <a href="/media/{{trip.photo2}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo2}}"/>
+                    </a>
+                  </figure>
+
+                    <figure class="col">
+                    <a href="/media/{{trip.photo3}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo3}}"/>
                     </a>
                   </figure>
                 </div>
 
                 <div class="row">
                   <figure class="col">
-                    <a class="black-text" href="/media/{{trip.photo3}}"
-                      data-size="1600x1067">
-                      <img alt="picture" src="/media/{{trip.photo3}}"
-                        class="img-fluid" />
+                    <a href="/media/{{trip.photo4}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo4}}"/>
                     </a>
                   </figure>
 
                   <figure class="col">
-                    <a class="black-text" href="/media/{{trip.photo4}}"
-                      data-size="1600x1067">
-                      <img alt="picture" src="/media/{{trip.photo4}}"
-                        class="img-fluid" />
+                    <a href="/media/{{trip.photo5}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo5}}"/>
                     </a>
                   </figure>
+
+                    <figure class="col">
+                    <a href="/media/{{trip.photo6}}"
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      <img alt="picture" src="/media/{{trip.photo6}}"/>
+                    </a>
+                    </figure>
                 </div>
-            </div>
+    </div>
 
             <div class="card-body">
                 <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>

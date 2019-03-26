@@ -3,7 +3,7 @@ body {
     padding: 30px;
 }
 img {
-    width: 500px;
+    width: 400px;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 }
 .card {
@@ -17,5 +17,11 @@ img {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: SaddleBrown;
+    color: black;
+}
+.gallery img {
+    transition: 1s;
+}
+.gallery img:hover {
+    transform: scale(1.1);
 }

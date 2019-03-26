@@ -10,6 +10,8 @@ class Picture(models.Model):
     photo2 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
     photo3 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
     photo4 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo5 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
+    photo6 = models.ImageField(null=True, blank=True, upload_to='wgrane_zdjecia')
 
     def __str__(self):
         return self.name_with_year()
