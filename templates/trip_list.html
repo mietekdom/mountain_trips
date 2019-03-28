@@ -9,24 +9,39 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h2 class="display-5">Zdjęcia z moich wypraw w polskie góry</h2>
+            <h2 class="display-5"><b>Zdjęcia z wypraw w polskie góry</b></h2>
             <p class="display-5">{% if user.is_authenticated %}
               Hello {{user.username}}<br></p>
 
                 <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    <div class="email">
+                        <a href="mailto:mieczyslawdomanski@wp.pl"><i class="fas fa-3x fa-envelope-square"></i></a>
+                        <a href="https://www.instagram.com/domanskimietek/"><i class="fab fa-3x fa-instagram"></i></a>
+                    </div>
             {% else %}
                 <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    <div class="email">
+                        <a href="mailto:mieczyslawdomanski@wp.pl"><i class="fas fa-3x fa-envelope-square"></i></a>
+                        <a href="https://www.instagram.com/domanskimietek/"><i class="fab fa-3x fa-instagram"></i></a>
+                    </div>
             {% endif %}
         </div>
     </div>
 
-        <a href="{% url 'nowy_wyjazd' %}"><button type="button" class="btn btn-secondary">Dodaj wyjazd</button></a>
-    <br>
+
+       <div class="card-body">
+        <p class="display-5">{% if user.is_authenticated %}
+           <a href="{% url 'nowy_wyjazd' %}"><button type="button" class="btn btn-secondary">Dodaj wyjazd</button></a>
+            {% else %}
+              <br>
+            {% endif %}
+        </div>
+
     <br>
 
     {% for trip in trips reversed %}
         <div class="card">
-            <h2> {{trip}} </h2>
+            <h2> {{trip}} ({{trip.year}}) </h2>
             <p> {{trip.description}} </p>
 
     <div class="gallery">
@@ -77,11 +92,18 @@
                 </div>
     </div>
 
-            <div class="card-body">
-                <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
-                <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>
-            </div>
 
+            <div class="card-body">
+                <p class="display-5">{% if user.is_authenticated %}
+                     <a href="{% url 'edytuj_wyjazd' trip.id %}"><i class="fas fa-2x fa-edit"></i></a>
+                     <a href="{% url 'usun_wyjazd' trip.id %}"><i class="fas fa-2x fa-trash-alt"></i></a>
+                {% else %}
+                    <br>
+                {% endif %}
+            </div>
         </div>
+    <br>
     {% endfor %}
     {% endblock %}
+
+

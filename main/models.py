@@ -17,4 +17,4 @@ class Picture(models.Model):
         return self.name_with_year()
 
     def name_with_year(self):
-        return str(self.name) + " (" + str(self.year) + ")"
+        return str(self.name)

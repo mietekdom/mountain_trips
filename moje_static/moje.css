@@ -25,3 +25,7 @@ img {
 .gallery img:hover {
     transform: scale(1.1);
 }
+.email {
+    position: relative; top: 20px;
+    color: red;
+}
