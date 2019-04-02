@@ -3,6 +3,25 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import PictureForm
 
+from django.contrib.auth.models import User
+from rest_framework import viewsets
+from .serializers import UserSerializer, PictureSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+class PictureViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Picture.objects.all()
+    serializer_class = PictureSerializer
+
 
 def all_trips(request):
     trips = Picture.objects.all()
