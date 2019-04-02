@@ -4,4 +4,4 @@ Python Django - web page.
 Strona ze zdjęciami z wyjazdów w góry. W trakcie budowy.
 
 Technologie:
-Python Django, Html, css
+Python Django, Html, css, JavaScript
