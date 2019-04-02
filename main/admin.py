@@ -4,5 +4,5 @@ from .models import Picture
 
 @admin.register(Picture)
 class PictureAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'year', 'mountains', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5',
+    list_display = ('name', 'description', 'year', 'month', 'mountains', 'photo1', 'photo2', 'photo3', 'photo4', 'photo5',
                     'photo6')

@@ -41,14 +41,14 @@
 
     {% for trip in trips reversed %}
         <div class="card">
-            <h2> {{trip}} ({{trip.year}}) </h2>
+            <h2> {{trip}} ({{trip.month}} {{trip.year}}) </h2>
             <p> {{trip.description}} </p>
 
     <div class="gallery">
                 <div class="row">
                   <figure class="col">
                     <a href="/media/{{trip.photo1}}"
-                      data-lightbox="mygallery" data-title="{{trip.mountains}}">
+                      data-lightbox="mygallery" data-title="{{trip.mountains}}" >
                       <img alt="picture" src="/media/{{trip.photo1}}"/>
                     </a>
                   </figure>
