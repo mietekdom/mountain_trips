@@ -1,0 +1,1 @@
+web: gunicorn mountain_trips.wsgi --log-file -
