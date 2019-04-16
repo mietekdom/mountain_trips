@@ -119,7 +119,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'moje_static')
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = 'moje_media'
 
 LOGIN_URL = 'login'
 
