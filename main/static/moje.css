@@ -1,0 +1,31 @@
+body {
+    color: #444;
+    padding: 30px;
+}
+img {
+    width: 400px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.card {
+    width: cover;
+    padding: 40px;
+}
+.jumbotron{
+    background-image: url("/media/wyprawy.jpeg");
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black;
+}
+.gallery img {
+    transition: 1s;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+}
+.email {
+    position: relative; top: 20px;
+    color: red;
+}
